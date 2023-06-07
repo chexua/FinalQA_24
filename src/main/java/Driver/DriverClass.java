@@ -23,7 +23,7 @@ public class DriverClass {
     private static WebDriver driver;
 
     private static WebDriver setUpDriver(){
-        System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Selenium\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         driver = new ChromeDriver(options);
@@ -34,7 +34,6 @@ public class DriverClass {
         assertions = new AssertionsClass(driver);
 
         driver.manage().window().maximize();
-        //driver.manage().timeouts().pageLoadTimeout(IMPLICITY_WAIT, TimeUnit.SECONDS); //отработка скрипта 10 сек
         driver.manage().timeouts().implicitlyWait(IMPLICITY_WAIT, TimeUnit.SECONDS);
         return driver;
     }
